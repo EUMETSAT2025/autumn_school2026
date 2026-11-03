@@ -1,0 +1,31 @@
+enhancements:
+
+  fa:
+    standard_name: fa
+    operations:
+    - name: colorize
+      method: !!python/name:satpy.enhancements.colorize
+      kwargs:
+        palettes:
+        - {colors: rainbow, min_value: 0, max_value: 3}
+
+
+  afa:
+    standard_name: afa
+    operations:
+    - name: colorize
+      method: !!python/name:satpy.enhancements.colorize
+      kwargs:
+        palettes:
+        - {colors: rainbow, min_value: 0, max_value: 40}
+
+  afr:
+    standard_name: afr
+    operations:
+    - name: colorize
+      method: !!python/name:satpy.enhancements.colorize
+      kwargs:
+        palettes:
+        - {colors: rainbow, min_value: 0, max_value: 120}
+
+        

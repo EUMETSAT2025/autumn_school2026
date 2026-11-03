@@ -1,0 +1,69 @@
+image: python:3.10.1
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  SONAR_PATH: $CI_PROJECT_DIR/sonar-scanner
+  GIT_DEPTH: 0
+
+cache:
+  paths:
+    - .cache/pip
+    - venv/
+prepare:
+  stage: .pre
+  script:
+    - python --version  # For debugging
+    - pip install virtualenv
+    - virtualenv venv
+    - source venv/bin/activate
+    - python -m pip install --upgrade pip
+    - apt update -y
+    - apt install wget unzip -y
+    - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-linux.zip
+    - unzip sonar-scanner-cli-4.7.0.2747-linux.zip
+    - rm sonar-scanner-cli-4.7.0.2747-linux.zip
+    - mv sonar-scanner-4.7.0.2747-linux/ sonar-scanner
+  cache:
+    paths:
+      - $SONAR_PATH
+    policy: push
+  only:
+    - master
+    
+analyse_sonarqube:
+  stage: build
+  allow_failure: true
+  cache:
+    paths:
+      - .sonar/cache
+      - $SONAR_PATH
+  script:
+    - export PATH=$PATH:$SONAR_PATH/bin
+    - export SONAR_SCANNER_OPTS="-Djavax.net.ssl.trustStore=$CI_PROJECT_DIR/cacerts -Djavax.net.ssl.trustStorePassword=$TLSCertPsw"
+    - sonar-scanner
+  only:
+    - master
+
+show_results:
+  stage: deploy
+  dependencies:
+    - prepare
+  rules:
+    - allow_failure: true
+  cache:
+    paths:
+      - .sonar/cache
+      - $SONAR_PATH
+      - $SONAR_CONF
+  script:
+      - projectKey=`sed -n 's/^sonar.projectKey=\(.*\)/\1/p' < $CI_PROJECT_DIR/sonar-project.properties`
+      - echo $projectKey
+      - 'curl -u c0b3937646525f219ddaf9e7dfda57e3e9788aa6: -k -d "project=$projectKey&ps=1&category=QUALITY_GATE" https://sonarqube.opscloud.eumetsat.int/api/project_analyses/search >> $CI_PROJECT_DIR/output.json'
+      - if grep -Po '"name":*\K"[^"]*"' $CI_PROJECT_DIR/output.json; then  grep -Po '"name":*\K"[^"]*"' $CI_PROJECT_DIR/output.json > $CI_PROJECT_DIR/aux
+      - else echo "Not Changes" >> $CI_PROJECT_DIR/aux   
+      - fi
+      - cat $CI_PROJECT_DIR/aux
+      - value=`cat aux`
+      - if [ "$value" == 'Red (was Green)' ]; then  exit 1; else echo "done"; fi
+
+

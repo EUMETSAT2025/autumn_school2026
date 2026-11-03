@@ -1,0 +1,15 @@
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Download logs
+wget-log
+wget-log.*
+
+# Temporary/editor files
+*.swp
+*~
+*.nc

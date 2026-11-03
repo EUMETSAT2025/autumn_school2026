@@ -1,0 +1,27 @@
+Iberian:
+  description: Iberian
+  projection:
+    proj: laea
+    ellps: WGS84
+    lat_0: 42.5
+    lon_0: 20.0
+  shape:
+    height: 1657
+    width: 1824
+  area_extent:
+    lower_left_xy: [-912180.692529, -780260.976814]
+    upper_right_xy: [912180.692529, 876712.972531]
+    
+Iberian2:
+  description: Iberian2
+  projection:
+    proj: laea
+    ellps: WGS84
+    lat_0: 37.5
+    lon_0: 12.5
+  shape:
+    height: 185
+    width: 152
+  area_extent:
+    lower_left_xy: [-228226.993952, -274418.047045]
+    upper_right_xy: [228226.993952, 280362.733837]

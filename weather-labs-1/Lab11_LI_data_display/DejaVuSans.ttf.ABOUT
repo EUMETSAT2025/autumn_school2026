@@ -1,0 +1,15 @@
+# Component information
+name: DejaVuSans
+description: DejaVuSans Font
+copyright: Bitstream Vera Fonts Copyright, Arev Fonts Copyright, Public Domain
+license_reference: Bitstream Vera Fonts Copyright, Arev Fonts Copyright, Public Domain
+homepage_url: https://dejavu-fonts.github.io
+download_url: https://dejavu-fonts.github.io/Download.html
+version: 2.37
+date: 2016-07-30
+ 
+# Package IPR documentation
+license_text_file: https://dejavu-fonts.github.io/License.html
+ 
+# File(s) associated to this component (if no file or pattern specified, reference is made to all files and sub-directories) :
+about_resource: DejaVuSans.ttf

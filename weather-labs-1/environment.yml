@@ -1,0 +1,14 @@
+name: MTG
+channels:
+  - conda-forge
+dependencies:
+  - conda-forge::python=3.9
+  - conda-forge::satpy=0.51.0
+  - conda-forge::cartopy
+  - conda-forge::pycoast
+  - conda-forge::notebook
+  - conda-forge::matplotlib
+  - conda-forge::imageio-ffmpeg
+  - conda-forge::pydecorate
+  - conda-forge::ipympl
+  - conda-forge::pyhdf

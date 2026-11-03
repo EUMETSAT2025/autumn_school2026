@@ -1,0 +1,85 @@
+sensor_name: visir/li
+
+composites:
+
+  # afa:
+  #   compositor: !!python/name:satpy.composites.SingleBandCompositor
+  #   standard_name: afa
+  #   prerequisites:
+  #     - average_flash_area
+      
+  # afa_C02:
+  #   compositor: !!python/name:satpy.composites.BackgroundCompositor
+  #   standard_name: crFlash
+  #   prerequisites:
+  #     - average_flash_area
+  #     - C02
+
+  # afa_airm:
+  #   compositor: !!python/name:satpy.composites.BackgroundCompositor
+  #   standard_name: afa
+  #   prerequisites:
+  #     - flash_accumulation
+  #     - airmass
+
+  accumulated_flash_area_airmass:
+    compositor: !!python/name:satpy.composites.BackgroundCompositor
+    standard_name: accumulated_flash_area_airmass
+    prerequisites:
+      - afa
+      - airmass    
+
+  accumulated_flash_area_IR_108_inv:
+    compositor: !!python/name:satpy.composites.BackgroundCompositor
+    standard_name: accumulated_flash_area_IR_108_inv
+    prerequisites:
+      - afa
+      - IR_108_inv        
+
+  afr:
+    compositor: !!python/name:satpy.composites.SingleBandCompositor
+    standard_name: afr
+    prerequisites:
+      - flash_radiance
+
+  afa:
+    compositor: !!python/name:satpy.composites.SingleBandCompositor
+    standard_name: afa
+    prerequisites:
+      - accumulated_flash_area
+
+  fa:
+    compositor: !!python/name:satpy.composites.SingleBandCompositor
+    standard_name: fa
+    prerequisites:
+      - flash_accumulation
+         
+  flash_accumulation_IR_108_inv:
+    compositor: !!python/name:satpy.composites.BackgroundCompositor
+    standard_name: flash_accumulation_IR_108_inv
+    prerequisites:
+      - fa
+      - IR_108_inv     
+
+  flash_accumulation_airmass:
+    compositor: !!python/name:satpy.composites.BackgroundCompositor
+    standard_name: flash_accumulation_IR_108_inv
+    prerequisites:
+      - fa
+      - airmass 
+
+  accumulated_flash_radiance_IR_108_inv:
+    compositor: !!python/name:satpy.composites.BackgroundCompositor
+    standard_name: accumulated_flash_radiance_IR_108_inv
+    prerequisites:
+      - afr
+      - IR_108_inv     
+
+  accumulated_flash_radiance_airmass:
+    compositor: !!python/name:satpy.composites.BackgroundCompositor
+    standard_name: accumulated_flash_radiance_IR_108_inv
+    prerequisites:
+      - afr
+      - airmass 
+
+      

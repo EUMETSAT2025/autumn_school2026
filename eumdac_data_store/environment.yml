@@ -1,0 +1,22 @@
+# copyright: 2025 EUMETSAT
+# license: LICENSE.txt
+name: eumdac_data_store
+channels:
+  - conda-forge
+  - eumetsat
+dependencies:
+  - conda-forge::matplotlib
+  - conda-forge::python=3.10
+  - conda-forge::shapely
+  - conda-forge::geopandas
+  - conda-forge::ipykernel
+  - pip:
+    - jupyterlab
+    - notebook
+    - eumdac
+    - requests
+    - cartopy
+    - pandas
+    - numpy
+    - netCDF4
+    - pyproj

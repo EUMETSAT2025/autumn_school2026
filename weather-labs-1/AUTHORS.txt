@@ -1,0 +1,17 @@
+# Copyright holder
+EUMETSAT
+ 
+# List of authors involved in the development
+Natasa Strelec Mahovic (EUMETSAT)
+Vesa Nietosvaara (EUMETSAT)
+Bartolomeo Viticchie (EUMETSAT)
+Sven-Erik Enno (EUMETSAT)
+
+# Contributing contractors
+Dr. Alen Berta (CGI)
+Djordje Gencic (Exostaff)
+Ivan Smiljanic (Exostaff)
+Pablo Benedicto (Solenix)
+
+# Support
+For all queries on this software package, please contact ops@eumetsat.int

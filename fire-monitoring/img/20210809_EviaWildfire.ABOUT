@@ -1,0 +1,16 @@
+# Component information
+name: 20210809_EviaWildfire.jpg
+description: This image, acquired by one of the Copernicus Sentinel-2 satellites on 8 August 2021, shows the ongoing wildfire on the island of Evia in eastern Greece.
+copyright: 2021 European Commission
+license_spdx: -
+home_url: https://www.copernicus.eu/en/media/image-day-gallery/evia-wildfire-greece
+date: 2021-08-09
+ 
+# File(s) associated to this component
+about_resource: ./img/20210809_EviaWildfire.jpg
+
+# Note
+The imagery, data and information produced by the Copernicus programme of the European Union is made available on a full, free and open basis to businesses, scientists and citizens.
+This Image of the Day may be reused freely and without prior authorisation by the media provided the following attribution is included:
+Credit: European Union, Copernicus Sentinel-X imagery [X must be changed to indicate which Sentinel satellite acquired the image – refer to image caption]
+By downloading this image, you agree to use the above credit for any and all publications

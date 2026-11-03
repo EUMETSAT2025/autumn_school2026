@@ -1,0 +1,22 @@
+# Component information
+name: EU-Copernicus-EUM_3Logos.png
+description: Copernicus and EUMETSAT logo
+trade mark: 2021 European Commission
+trade mark: 2022 EUMETSAT
+license_spdx: -
+license_spdx: -
+download_url: https://www.copernicus.eu/sites/default/files/inline-images/copernicus-logo_1.jpg
+download_url: https://www-cdn.eumetsat.int/files/2022-03/eumetsat_logo_blue.svg
+home_url: https://www.copernicus.eu/en/access-data/copyright-and-licences
+home_url: https://www.eumetsat.int/about-us/terms-use
+date: 2021-08-09
+date: 2022-03-01
+ 
+
+# Notes
+The logo is used for referencing the Copernicus Programme, in a way compliant with the "Article 2. Permitted use" as described in the home_url documented above. Copernicus is a Component of the EU Space Programme. Publicity material, official notices, reports and publications shall display the reference to the EU Space Programme, as well as, on equal footing the text “Programme of the [EU emblem] European Union”, followed by the Copernicus logo and the text “implemented by [EUMETSAT logo]”
+
+The EUMETSAT logo and name are owned by EUMETSAT and protected by trademarks, as well as under Article 6ter of the Paris Convention for the Protection of Industrial Property. You may not modify or create derivatives of the EUMETSAT logo. Any use (reproduction, publication, display) and exploitation of our logo or corporate visual identity requires prior written authorisation.
+
+# File(s) associated to this component
+about_resource: ./img/EU-Copernicus-EUM_3Logos.png

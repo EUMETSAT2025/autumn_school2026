@@ -1,0 +1,23 @@
+sensor_name: visir/li
+
+composites:
+
+  # afa:
+  #   compositor: !!python/name:satpy.composites.SingleBandCompositor
+  #   standard_name: afa
+  #   prerequisites:
+  #     - average_flash_area
+      
+  # afa_C02:
+  #   compositor: !!python/name:satpy.composites.BackgroundCompositor
+  #   standard_name: crFlash
+  #   prerequisites:
+  #     - average_flash_area
+  #     - C02
+
+  afa_airm:
+    compositor: !!python/name:satpy.composites.BackgroundCompositor
+    standard_name: afa
+    prerequisites:
+      - flash_accumulation
+      - airmass

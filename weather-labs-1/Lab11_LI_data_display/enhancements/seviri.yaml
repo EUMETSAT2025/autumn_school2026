@@ -1,0 +1,20 @@
+enhancements:
+
+  hrv:
+    standard_name: hrv
+    operations:
+    - name: stretch
+      method: !!python/name:satpy.enhancements.stretch
+      kwargs:
+        stretch: crude
+        min_stretch: [0, ]
+        max_stretch: [100, ]
+
+  IR_108_inv:
+    standard_name: IR_108_inv
+    operations:
+    - name: colorize
+      method: !!python/name:satpy.enhancements.colorize
+      kwargs:
+        palettes:
+          - {colors: greys, min_value: 215, max_value: 300}

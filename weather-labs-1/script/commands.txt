@@ -1,0 +1,2 @@
+python image.py /home/jupyter-autumn26_t2/autumn_school2026/eumdac_data_store/downloads/ airmass 2026-10-19T14:00:00Z "-20,40,35,55" 2000
+python image.py /home/jupyter-autumn26_t2/autumn_school2026/eumdac_data_store/downloads/ cloud_phase 2026-10-19T14:00:00Z "-20,40,35,55" 2000

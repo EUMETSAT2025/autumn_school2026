@@ -1,0 +1,34 @@
+sensor_name: visir/seviri
+
+modifiers:
+  sunz_corrected:
+    modifier: !!python/name:satpy.modifiers.SunZenithCorrector
+
+  co2_corrected:
+    modifier: !!python/name:satpy.modifiers.CO2Corrector
+    sensor: [seviri]
+    prerequisites:
+    - IR_108
+    - IR_134
+
+  rayleigh_corrected:
+    modifier: !!python/name:satpy.modifiers.PSPRayleighReflectance
+    atmosphere: us-standard
+    aerosol_type: rayleigh_only
+    prerequisites:
+    - name: VIS006
+      modifiers: [sunz_corrected]
+    optional_prerequisites:
+    - satellite_azimuth_angle
+    - satellite_zenith_angle
+    - solar_azimuth_angle
+    - solar_zenith_angle
+
+composites:
+
+
+  IR_108_inv:
+    compositor: !!python/name:satpy.composites.GenericCompositor
+    standard_name: IR_108_inv
+    prerequisites:
+      - name: IR_108
